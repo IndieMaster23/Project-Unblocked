@@ -12,7 +12,10 @@ $(window).ready(() => {
     }
     else i = 0;
     if (i === 4) {
-      $('#page').html('you did it');
+      $('#page').html(`<a id="link">click</a>`);
+      const r = Math.floor(Math.random() * 1000000);
+      document.cookie = `b=${r}; `;
+      $('#link').click(() => window.location.href = `http://${window.location.host}/main?a=${Date.now()}&b=${r}`);
     }
   });
 });
